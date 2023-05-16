@@ -43,9 +43,19 @@ class Soldier extends Dwarf {
 	
 	// Геттер для получения информации об объекте Soldier:
 	public void getInfo() {
-		System.out.println("Информация о персонаже:");
-		System.out.println("Имя: " + this.name);
-		System.out.println("Возраст: " + this.age);
+		System.out.println("Информация о персонаже " + this.name + ":");
+		System.out.print("Профессия: ");
+		if(this.profession == 0)
+			System.out.println("отсутствует"); else
+		if(this.profession == 1)
+			System.out.println("топорщик"); else
+		if(this.profession == 2)
+			System.out.println("мечник"); else
+		if(this.profession == 3)
+			System.out.println("арбалетчик");
+		else
+			System.out.println("в разработке");
+				System.out.println("Возраст: " + this.age);
 		System.out.println("Текущая длина бороды: " + this.beardLen);
 		System.out.print("Текущая деятельность: ");
 		if(this.job == 0)
@@ -79,10 +89,9 @@ class Soldier extends Dwarf {
 			System.out.println("есть");
 		else
 			System.out.println("нет");
-			
-		System.out.print("Владение животным: " + this.dwarfAnimal.kind);
+		System.out.println("Владение животным: " + this.dwarfAnimal.kind);
+		System.out.println();
 	}
-		
 }
 
 // класс Оружие
@@ -175,18 +184,24 @@ class Pasturable extends Animal {
 
 public class Main {
     public static void main(String[] args) {
-		// Создадим объект cow1 класса Animal:
+		// Создадим объекты класса Animal:
 		Pasturable cow1 = new Pasturable("Cow", 1, 100, 300, false, true);
-		// Создадим объект класса Weapon - некоторую комбинацю оружия:
-		Weapon comb1 = new Weapon(5, 5, true, true, false, true);
+		Pasturable horse1 = new Pasturable("Horse", 3, 250, 200, false, true);
 		
-		// Создадим композицию - объект класса Soldier (дочерний класс Dwarf) 
-		// с созданными объектами cow1 и comb1 - объектами классов Pasturable и Weapon:
-		Soldier сrossbowman1 = new Soldier("Crossbowman", 10, 5.5, 2, 0, comb1, cow1);
+		// Создадим объекты класса Weapon - некоторые комбинации оружия:
+		Weapon comb1 = new Weapon(5, 5, true, true, false, true);
+		Weapon comb2 = new Weapon(0, 0, false, false, false, true);
+		
+		// Создадим 2 композиции - объекты класса Soldier (дочерний класс Dwarf) 
+		// с созданными объектами классов Pasturable и Weapon:
+		Soldier sold1 = new Soldier("Ral", 10, 5.5, 2, 3, comb1, cow1);
+		Soldier sold2 = new Soldier("Dastot", 2, 1.5, 1, 0, comb2, horse1);
 
-		// Выведем информацию об объекте сrossbowman1:
-		сrossbowman1.getInfo();
-
-    
+		// Выведем информацию об объекте sold1 и sol2:
+		sold1.getInfo();
+		sold2.getInfo();
+		
+		// Таким образом, любые объекты классов Animal и Soldier можно использовать для создания композиции
+		// и "присваивать" их новому солдату - объекту класса Soldier
     }
 }
