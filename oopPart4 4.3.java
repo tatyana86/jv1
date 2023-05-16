@@ -1,6 +1,5 @@
 // 4.3
 // класс Дварфы
-// видимость полей и методов protected, т.к. у класса есть потомок
 class Dwarf {
     protected String name;
     protected int beardLen;  // текущая длина бороды
@@ -12,15 +11,15 @@ class Dwarf {
 	}
 	
 	// Метод роста бороды, получает один аргумент типа int - 
-	// - значение, на которое выросла борода:
+	// - значение, на которое выросла борода
 	public int beardGrowth(int growth) {
 		this.beardLen += growth;
 		return this.beardLen;
 	}
 	
 	// Метод роста бороды, получает два аргумента:
-	// 1 - типа int - значение, на которое выросла борода;
-	// 2 - типа int - значение, на которое борода была обрезана в бою.
+	// 1 - типа int - значение, на которое выросла борода,
+	// 2 - типа int - значение, на которое борода была обрезана в бою
 	public int beardGrowth(int growth, int trim) {
 		this.beardLen = this.beardLen + growth - trim;
 		if(this.beardLen < 0)
