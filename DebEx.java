@@ -1,4 +1,3 @@
-import java.util.Random;
 import java.util.logging.*;
 
 class Dwarf {
