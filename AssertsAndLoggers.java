@@ -20,7 +20,7 @@ class Dwarf {
     }
 
     public int getBeardLen() {
-        assert this.beardLen <= 100; // допустим, что борода не может вырасти более 30 единиц (абсурдная ситуация)
+        assert this.beardLen <= 100; // допустим, что борода не может вырасти более 100 единиц (абсурдная ситуация)
         return this.beardLen;
     }
 }
