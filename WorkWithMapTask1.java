@@ -2,10 +2,10 @@ import java.util.HashMap;
 import java.util.Random;
 
 public class WorkWithMapTask1 {
-	
+
     public static void main(String[] args) {
-		
-		HashMap<Integer, String> map100 = new HashMap<Integer, String>(); // объявляем HashMap
+
+        HashMap<Integer, String> map100 = new HashMap<Integer, String>(); // объявляем HashMap
         Random rand = new Random();
         int n = 100;
         int[] keys = new int[n];
