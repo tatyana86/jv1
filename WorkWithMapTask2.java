@@ -3,13 +3,13 @@ import java.util.HashMap;
 import java.util.Random;
 
 public class WorkWithMapTask2 {
-	
+
     static ArrayList<Integer> repeatNum(int [] list, int N) {
 
         ArrayList<Integer> res = new ArrayList<>(); // результирующий список
         HashMap<Integer, Integer> numCount = new HashMap<Integer, Integer>(); // словарь для подсчета чисел в переданном списке
-        
-		// Посчитаем повторения чисел в переданном списке:
+
+        // Посчитаем повторения чисел в переданном списке:
         for(int i = 0; i < list.length; i ++) {
             // Метод .getOrDefault() возвращает значение по ключу, если таковой существует;
             // в противном случае создает пару с переданным ключом и присваивает значение второго аргумента,
@@ -41,6 +41,6 @@ public class WorkWithMapTask2 {
         }
 
         ArrayList<Integer> repeatN = repeatNum(randNums, Num);
-        
+
     }
 }
